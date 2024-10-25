@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form action="/submit"method="post">
+        <div class="container">
+            <h1>Enter Student Details and Scores</h1>
+            
+            <div class="form-group">
+                <label for="name">Student Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="roll_number">Roll Number:</label>
+                <input type="text" id="roll_number" name="roll_number" required>
+            <div class="form-group">
+                <label for="DSA">Data Structures</label>
+                <input type="number" id="DSA" name="DSA" value="0"required>
+            </div>
+            <div class="form-group">
+                <label for="OOPS">OOP C++</label>
+                <input type="number" id="OOPS" name="OOPS" value="0"required>
+            </div>
+            <div class="form-group">
+                <label for="OS">Operating System</label>
+                <input type="number" id="OS" name="OS" value="0"required>
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <footer>
+        <p>&copy; 2024 Milan collage of Engineering. All rights reserved.</p>
+    </footer>
+</body>
+</html>
