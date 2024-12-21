@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Conversion Results</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: rgb(230, 230, 250);
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: darkcyan;
+        }
+
+        .result-container {
+            background-color: white;
+            padding: 30px;
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .result-container p {
+            font-weight: bold;
+            color: darkslategray;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: darkcyan;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-link:hover {
+            background-color: teal;
+        }
+
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Currency Conversion Result</h2>
+
+    {% if result %}
+        <div class="result-container">
+            <p>{{ result }} {{ to_currency.upper() }}</p>
+            <p>Converted from {{ from_currency.upper() }} to {{ to_currency.upper() }}</p>
+        </div>
+    {% else %}
+        <p class="error-message">No conversion result available.</p>
+    {% endif %}
+
+    <a class="back-link" href="{{ url_for('currency_converter') }}">Go back</a>
+</body>
+</html>
